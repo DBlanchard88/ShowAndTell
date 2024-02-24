@@ -3,5 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :posts #user can have many posts
+  has_many :posts, dependent: :destroy #user can have many posts
+  has_many :comments, dependent: :destroy #delete the user and we destroy all the comments
 end
