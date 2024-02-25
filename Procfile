@@ -1,3 +1,1 @@
-web: env RUBY_DEBUG_OPEN=true bin/rails server
-css: bun run watch:css
-web: bun index.js
+web: bundle exec puma -C config/puma.rb
